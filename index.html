@@ -3,27 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <title>Calcolatrice</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="app">
-    <h1>Calcolatrice</h1>
+  <div class="calculator">
+    <!-- Schermo -->
+    <input type="text" id="display" readonly value="0">
 
-    <div class="row">
-      <input type="text" id="num1" placeholder="Numero 1" inputmode="decimal" />
-      <input type="text" id="num2" placeholder="Numero 2" inputmode="decimal" />
-    </div>
-
-    <div class="row">
-      <button data-op="add">+</button>
-      <button data-op="sub">−</button>
-      <button data-op="mul">×</button>
+    <!-- Tastierino -->
+    <div class="keys">
+      <!-- Riga 1 -->
+      <button data-digit="7">7</button>
+      <button data-digit="8">8</button>
+      <button data-digit="9">9</button>
       <button data-op="div">÷</button>
-      <button id="clear" title="Pulisci">C</button>
-    </div>
 
-    <p id="out" aria-live="polite"></p>
+      <!-- Riga 2 -->
+      <button data-digit="4">4</button>
+      <button data-digit="5">5</button>
+      <button data-digit="6">6</button>
+      <button data-op="mul">×</button>
+
+      <!-- Riga 3 -->
+      <button data-digit="1">1</button>
+      <button data-digit="2">2</button>
+      <button data-digit="3">3</button>
+      <button data-op="sub">−</button>
+
+      <!-- Riga 4 -->
+      <button class="zero" data-digit="0">0</button>
+      <button data-dot=".">.</button>
+      <button id="equals">=</button>
+      <button data-op="add">+</button>
+
+      <!-- Riga 5 (clear) -->
+      <button id="clear">C</button>
+    </div>
   </div>
 </body>
 </html>

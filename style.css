@@ -1,49 +1,55 @@
 body {
-  font-family: system-ui, Arial, sans-serif;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background: #f6f7f9;
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  margin: 0;
 }
 
-.app {
-  background: #fff;
-  padding: 20px 24px;
+.calculator {
+  background: white;
+  padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  width: min(420px, 92vw);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 240px;
 }
 
-h1 { margin: 0 0 16px; text-align: center; }
-
-.row { display: flex; gap: 10px; margin: 10px 0; }
-
-input {
-  flex: 1;
-  padding: 10px 12px;
-  font-size: 16px;
-  border: 1px solid #dcdfe4;
+#display {
+  width: 100%;
+  font-size: 24px;
+  padding: 10px;
+  text-align: right;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
   border-radius: 8px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
 }
 
 button {
-  flex: 1;
-  padding: 10px 0;
   font-size: 18px;
-  border: 0;
+  padding: 12px;
+  border: none;
   border-radius: 8px;
   background: #2563eb;
-  color: #fff;
+  color: white;
   cursor: pointer;
 }
 
-button#clear { background: #6b7280; }
+button:hover {
+  filter: brightness(1.1);
+}
 
-button:hover { filter: brightness(1.05); }
+button.zero {
+  grid-column: span 2; /* fa occupare due colonne al tasto 0 */
+}
 
-#out {
-  min-height: 28px;
-  margin-top: 8px;
-  font-size: 18px;
+#clear {
+  grid-column: span 4;
+  background: #6b7280;
 }
